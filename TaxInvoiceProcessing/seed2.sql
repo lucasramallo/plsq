@@ -1,119 +1,135 @@
--- Inserir novos dados na tabela TB_EMITENTE
-INSERT INTO TB_EMITENTE (NOME, CNPJ, ENDERECO, TELEFONE, EMAIL) 
-VALUES 
-('TechWorld Soluções', '12345678000197', 'Av. Tecnologia, 100', '1122334455', 'techworld@email.com'),
-('AgroVida Produtos Agrícolas', '98765432000112', 'Rua das Colheitas, 200', '1199887766', 'agrovida@email.com'),
-('ConstruAço Materiais', '11122233000183', 'Av. das Construções, 300', '1133445566', 'construaco@email.com'),
-('ModaBela Confecções', '55566677000124', 'Rua das Tendências, 400', '1155667788', 'modabela@email.com'),
-('FarmaBem Medicamentos', '88899988000135', 'Av. da Saúde, 500', '1144556677', 'farmabem@email.com'),
-('InovaTech Sistemas', '12345678000198', 'Rua da Inovação, 600', '1122445566', 'inovatech@email.com'),
-('AgroFértil Fertilizantes', '98765432000113', 'Rodovia dos Agricultores, 700', '1199776655', 'agrofertil@email.com'),
-('AutoMecânica Peças', '11122233000184', 'Av. Automotiva, 800', '1133557799', 'automecanica@email.com'),
-('EcoPower Energia', '55566677000125', 'Rua Ecológica, 900', '1155778899', 'ecopower@email.com'),
-('PetCare Alimentos', '88899988000136', 'Av. dos Animais, 1000', '1144667788', 'petcare@email.com');
+BEGIN
+    -- Inserir dados na tabela TB_EMITENTE
+    INSERT INTO TB_EMITENTE (ID, NOME, CNPJ, ENDERECO, TELEFONE, EMAIL) 
+    VALUES (11, 'TechWorld Solutions', '11223344000155', 'Av. das Inovações, 1500', '1133445566', 'techworld@email.com');
 
--- Inserir novos dados na tabela TB_DESTINATARIO
-INSERT INTO TB_DESTINATARIO (NOME, CPF_CNPJ, ENDERECO, TELEFONE, EMAIL) 
-VALUES 
-('Marcos Alves', '12345678911', 'Rua das Oliveiras, 123', '11987654321', 'marcos.alves@email.com'),
-('Carla Mendes', '98765432102', 'Av. das Magnólias, 456', '11988776655', 'carla.mendes@email.com'),
-('Roberto Costa', '11122233346', 'Rua dos Jasmins, 789', '11999887766', 'roberto.costa@email.com'),
-('Sandra Rocha', '55566677790', 'Av. das Hortênsias, 101', '11997766554', 'sandra.rocha@email.com'),
-('Luciano Pereira', '99988877768', 'Rua das Azaleias, 202', '11996655443', 'luciano.pereira@email.com'),
-('Fernanda Lima', '12345678912', 'Av. dos Lírios, 303', '11995544332', 'fernanda.lima@email.com'),
-('Ricardo Almeida', '98765432103', 'Rua das Margaridas, 404', '11994433221', 'ricardo.almeida@email.com'),
-('Juliana Santos', '11122233347', 'Av. das Tulipas, 505', '11993322110', 'juliana.santos@email.com'),
-('Lucas Oliveira', '55566677791', 'Rua das Violetas, 606', '11992211009', 'lucas.oliveira@email.com'),
-('Patrícia Mendes', '99988877769', 'Av. das Hortênsias, 707', '11991100998', 'patricia.mendes@email.com');
+    INSERT INTO TB_EMITENTE (ID, NOME, CNPJ, ENDERECO, TELEFONE, EMAIL) 
+    VALUES (12, 'Alimentos Naturais Ltda', '99887766000144', 'Rua das Hortaliças, 300', '1199887766', 'alimentos.naturais@email.com');
 
--- Inserir novos dados na tabela TB_PRODUTO
-INSERT INTO TB_PRODUTO (DESCRICAO, CODIGO_BARRAS, NCM, CEST, UNIDADE, VALOR_UNITARIO) 
-VALUES 
-('Tablet 10 Polegadas', '123456789014', '84713000', '123458', 'UN', 1200.00),
-('Feijão Carioca 1kg', '987654321100', '10063090', '654323', 'KG', 8.00),
-('Tijolo Cerâmico', '112233445568', '69041000', '332213', 'UN', 1.50),
-('Blusa Feminina P', '998877665546', '61091000', '221135', 'UN', 45.00),
-('Dipirona 500mg', '667788990013', '30049099', '665546', 'CX', 5.00),
-('Smart TV 50 Polegadas', '123456789015', '85287200', '123459', 'UN', 2500.00),
-('Adubo Orgânico 10kg', '987654321101', '31051000', '654324', 'SC', 50.00),
-('Bateria Automotiva', '112233445569', '85071000', '332214', 'UN', 400.00),
-('Painel Solar 200W', '998877665547', '85414000', '221136', 'UN', 1000.00),
-('Ração para Gatos 5kg', '667788990014', '23091000', '665547', 'SC', 80.00);
+    INSERT INTO TB_EMITENTE (ID, NOME, CNPJ, ENDERECO, TELEFONE, EMAIL) 
+    VALUES (13, 'Construções Fortes', '55443322000133', 'Av. das Obras, 500', '1144556677', 'construcoes.fortes@email.com');
 
--- Inserir novos dados na tabela TB_NOTA_FISCAL
-INSERT INTO TB_NOTA_FISCAL (NUMERO, SERIE, DATA_EMISSAO, VALOR_TOTAL, EMITENTE_ID, DESTINATARIO_ID, STATUS, CHAVE_ACESSO, TIPO_OPERACAO) 
-VALUES 
-('000012355', '006', TO_DATE('2025-03-11', 'YYYY-MM-DD'), NULL, 6, 6, 'Pendente', NULL, 'Saída'),
-('000012356', '006', TO_DATE('2025-03-12', 'YYYY-MM-DD'), NULL, 7, 7, 'Pendente', NULL, 'Entrada'),
-('000012357', '007', TO_DATE('2025-03-13', 'YYYY-MM-DD'), 1500.00, 8, 8, 'Autorizada', '3522025098765432101234567890123456789012345678901234567896', 'Saída'),
-('000012358', '007', TO_DATE('2025-03-14', 'YYYY-MM-DD'), 750.00, 9, 9, 'Autorizada', '3522025098765432101234567890123456789012345678901234567897', 'Entrada'),
-('000012359', '008', TO_DATE('2025-03-15', 'YYYY-MM-DD'), NULL, 10, 10, 'Pendente', NULL, 'Saída'),
-('000012360', '008', TO_DATE('2025-03-16', 'YYYY-MM-DD'), NULL, 1, 1, 'Pendente', NULL, 'Entrada'),
-('000012361', '009', TO_DATE('2025-03-17', 'YYYY-MM-DD'), 1800.00, 2, 2, 'Autorizada', '3522025098765432101234567890123456789012345678901234567898', 'Saída'),
-('000012362', '009', TO_DATE('2025-03-18', 'YYYY-MM-DD'), 900.00, 3, 3, 'Autorizada', '3522025098765432101234567890123456789012345678901234567899', 'Entrada'),
-('000012363', '010', TO_DATE('2025-03-19', 'YYYY-MM-DD'), NULL, 4, 4, 'Pendente', NULL, 'Saída'),
-('000012364', '010', TO_DATE('2025-03-20', 'YYYY-MM-DD'), NULL, 5, 5, 'Pendente', NULL, 'Entrada');
+    INSERT INTO TB_EMITENTE (ID, NOME, CNPJ, ENDERECO, TELEFONE, EMAIL) 
+    VALUES (14, 'Moda Jovem', '66778899000122', 'Rua das Tendências, 700', '1155667788', 'moda.jovem@email.com');
 
--- Inserir novos dados na tabela TB_ITEM_NOTA_FISCAL
-INSERT INTO TB_ITEM_NOTA_FISCAL (NOTA_FISCAL_ID, PRODUTO_ID, QUANTIDADE, VALOR_UNITARIO) 
-VALUES 
-(11, 11, NULL, NULL),
-(11, 12, NULL, NULL),
-(12, 13, NULL, NULL),
-(12, 14, NULL, NULL),
-(13, 11, 15, 1200.00),
-(13, 12, 10, 8.00),
-(14, 13, 5, 1.50),
-(14, 14, 4, 45.00),
-(15, 15, NULL, NULL),
-(16, 16, NULL, NULL),
-(16, 17, NULL, NULL),
-(17, 18, NULL, NULL),
-(17, 19, NULL, NULL),
-(18, 16, 20, 2500.00),
-(18, 17, 10, 50.00),
-(19, 18, 6, 400.00),
-(19, 19, 5, 1000.00),
-(20, 20, NULL, NULL);
+    INSERT INTO TB_EMITENTE (ID, NOME, CNPJ, ENDERECO, TELEFONE, EMAIL) 
+    VALUES (15, 'Farmácia Bem-Estar', '22334455000111', 'Av. dos Remédios, 900', '1166778899', 'farmacia.bemestar@email.com');
 
--- Inserir novos dados na tabela TB_TRIBUTOS
-INSERT INTO TB_TRIBUTOS (NOTA_FISCAL_ID, ICMS, IPI, PIS, COFINS) 
-VALUES 
-(11, NULL, NULL, NULL, NULL),
-(12, NULL, NULL, NULL, NULL),
-(13, 270.00, 75.00, 24.75, 90.00),
-(14, 135.00, 37.50, 12.38, 45.00),
-(15, NULL, NULL, NULL, NULL),
-(16, NULL, NULL, NULL, NULL),
-(17, 324.00, 90.00, 29.70, 108.00),
-(18, 162.00, 45.00, 14.85, 54.00),
-(19, NULL, NULL, NULL, NULL),
-(20, NULL, NULL, NULL, NULL);
+    -- Inserir dados na tabela TB_DESTINATARIO
+    INSERT INTO TB_DESTINATARIO (ID, NOME, CPF_CNPJ, ENDERECO, TELEFONE, EMAIL) 
+    VALUES (11, 'Roberto Fernandes', '12345678911', 'Rua das Oliveiras, 123', '11987654322', 'roberto.fernandes@email.com');
 
--- Inserir novos dados na tabela TB_TRANSPORTADORA
-INSERT INTO TB_TRANSPORTADORA (NOME, CNPJ, ENDERECO, TELEFONE, EMAIL) 
-VALUES 
-('Rápido Transportes', '12345678000197', 'Av. das Estradas, 100', '1122334455', 'rapido.transportes@email.com'),
-('Carga Rápida', '98765432000112', 'Rua dos Caminhões, 200', '1199887766', 'cargarapida@email.com'),
-('TransCarga', '11122233000183', 'Av. dos Carregamentos, 300', '1133445566', 'transcarga@email.com'),
-('Expresso Logística', '55566677000124', 'Rua das Entregas, 400', '1155667788', 'expresso.logistica@email.com'),
-('Mundo Cargas', '88899988000135', 'Av. das Mercadorias, 500', '1144556677', 'mundocargas@email.com'),
-('Veloz Transportes', '12345678000198', 'Rua das Cargas, 600', '1122445566', 'veloz.transportes@email.com'),
-('TransGlobal Express', '98765432000113', 'Av. dos Fretes, 700', '1199776655', 'transglobal.express@email.com'),
-('Carga Leve Express', '11122233000184', 'Rua das Encomendas, 800', '1133557799', 'cargaleve.express@email.com'),
-('Logística Rápida', '55566677000125', 'Av. das Entregas, 900', '1155778899', 'logistica.rapida@email.com'),
-('Transporte Ágil', '88899988000136', 'Rua dos Veículos, 1000', '1144667788', 'transporte.agil@email.com');
+    INSERT INTO TB_DESTINATARIO (ID, NOME, CPF_CNPJ, ENDERECO, TELEFONE, EMAIL) 
+    VALUES (12, 'Carla Martins', '98765432122', 'Av. das Palmeiras, 456', '11988776644', 'carla.martins@email.com');
 
--- Inserir novos dados na tabela TB_FRETE
-INSERT INTO TB_FRETE (NOTA_FISCAL_ID, TRANSPORTADORA_ID, VALOR_FRETE) 
-VALUES 
-(11, 6, 110.00),
-(12, 7, 120.00),
-(13, 8, 130.00),
-(14, 9, 140.00),
-(15, 10, 150.00),
-(16, 1, 160.00),
-(17, 2, 170.00),
-(18, 3, 180.00),
-(19, 4, 190.00),
-(20, 5, 200.00);
+    INSERT INTO TB_DESTINATARIO (ID, NOME, CPF_CNPJ, ENDERECO, TELEFONE, EMAIL) 
+    VALUES (13, 'Fernando Souza', '11122233355', 'Rua dos Coqueiros, 789', '11999887755', 'fernando.souza@email.com');
+
+    INSERT INTO TB_DESTINATARIO (ID, NOME, CPF_CNPJ, ENDERECO, TELEFONE, EMAIL) 
+    VALUES (14, 'Juliana Costa', '55566677799', 'Av. das Flores, 101', '11997766553', 'juliana.costa@email.com');
+
+    INSERT INTO TB_DESTINATARIO (ID, NOME, CPF_CNPJ, ENDERECO, TELEFONE, EMAIL) 
+    VALUES (15, 'Ricardo Alves', '99988877788', 'Rua das Orquídeas, 202', '11996655442', 'ricardo.alves@email.com');
+
+    -- Inserir dados na tabela TB_PRODUTO
+    INSERT INTO TB_PRODUTO (ID, DESCRICAO, CODIGO_BARRAS, NCM, CEST, UNIDADE, VALOR_UNITARIO) 
+    VALUES (11, 'Tablet 10 Polegadas', '112233445577', '84713000', '123458', 'UN', 1200.00);
+
+    INSERT INTO TB_PRODUTO (ID, DESCRICAO, CODIGO_BARRAS, NCM, CEST, UNIDADE, VALOR_UNITARIO) 
+    VALUES (12, 'Feijão Carioca 1kg', '998877665533', '10063090', '654322', 'KG', 8.00);
+
+    INSERT INTO TB_PRODUTO (ID, DESCRICAO, CODIGO_BARRAS, NCM, CEST, UNIDADE, VALOR_UNITARIO) 
+    VALUES (13, 'Tijolo Cerâmico', '112233445588', '69041000', '332213', 'UN', 1.50);
+
+    INSERT INTO TB_PRODUTO (ID, DESCRICAO, CODIGO_BARRAS, NCM, CEST, UNIDADE, VALOR_UNITARIO) 
+    VALUES (14, 'Vestido Feminino', '998877665544', '62044300', '221135', 'UN', 80.00);
+
+    INSERT INTO TB_PRODUTO (ID, DESCRICAO, CODIGO_BARRAS, NCM, CEST, UNIDADE, VALOR_UNITARIO) 
+    VALUES (15, 'Dipirona 500mg', '667788990022', '30049099', '665546', 'CX', 5.00);
+
+    -- Inserir dados na tabela TB_NOTA_FISCAL
+    INSERT INTO TB_NOTA_FISCAL (ID, NUMERO, SERIE, DATA_EMISSAO, VALOR_TOTAL, EMITENTE_ID, DESTINATARIO_ID, STATUS, CHAVE_ACESSO, TIPO_OPERACAO) 
+    VALUES (11, '000012355', '006', TO_DATE('2025-03-11', 'YYYY-MM-DD'), NULL, 11, 11, 'Pendente', NULL, 'Saída');
+
+    INSERT INTO TB_NOTA_FISCAL (ID, NUMERO, SERIE, DATA_EMISSAO, VALOR_TOTAL, EMITENTE_ID, DESTINATARIO_ID, STATUS, CHAVE_ACESSO, TIPO_OPERACAO) 
+    VALUES (12, '000012356', '006', TO_DATE('2025-03-12', 'YYYY-MM-DD'), NULL, 12, 12, 'Pendente', NULL, 'Entrada');
+
+    INSERT INTO TB_NOTA_FISCAL (ID, NUMERO, SERIE, DATA_EMISSAO, VALOR_TOTAL, EMITENTE_ID, DESTINATARIO_ID, STATUS, CHAVE_ACESSO, TIPO_OPERACAO) 
+    VALUES (13, '000012357', '007', TO_DATE('2025-03-13', 'YYYY-MM-DD'), 1500.00, 13, 13, 'Autorizada', '3522025098765432101234567890123456789016', 'Saída');
+
+    INSERT INTO TB_NOTA_FISCAL (ID, NUMERO, SERIE, DATA_EMISSAO, VALOR_TOTAL, EMITENTE_ID, DESTINATARIO_ID, STATUS, CHAVE_ACESSO, TIPO_OPERACAO) 
+    VALUES (14, '000012358', '007', TO_DATE('2025-03-14', 'YYYY-MM-DD'), 700.00, 14, 14, 'Autorizada', '3522025098765432101234567890123456789017', 'Entrada');
+
+    INSERT INTO TB_NOTA_FISCAL (ID, NUMERO, SERIE, DATA_EMISSAO, VALOR_TOTAL, EMITENTE_ID, DESTINATARIO_ID, STATUS, CHAVE_ACESSO, TIPO_OPERACAO) 
+    VALUES (15, '000012359', '008', TO_DATE('2025-03-15', 'YYYY-MM-DD'), NULL, 15, 15, 'Pendente', NULL, 'Saída');
+
+    -- Inserir dados na tabela TB_ITEM_NOTA_FISCAL
+    INSERT INTO TB_ITEM_NOTA_FISCAL (ID, NOTA_FISCAL_ID, PRODUTO_ID, QUANTIDADE, VALOR_UNITARIO) 
+    VALUES (11, 11, 11, 1, 1200.00);
+
+    INSERT INTO TB_ITEM_NOTA_FISCAL (ID, NOTA_FISCAL_ID, PRODUTO_ID, QUANTIDADE, VALOR_UNITARIO) 
+    VALUES (12, 11, 12, 5, 8.00);
+
+    INSERT INTO TB_ITEM_NOTA_FISCAL (ID, NOTA_FISCAL_ID, PRODUTO_ID, QUANTIDADE, VALOR_UNITARIO) 
+    VALUES (13, 12, 13, 100, 1.50);
+
+    INSERT INTO TB_ITEM_NOTA_FISCAL (ID, NOTA_FISCAL_ID, PRODUTO_ID, QUANTIDADE, VALOR_UNITARIO) 
+    VALUES (14, 12, 14, 3, 80.00);
+
+    INSERT INTO TB_ITEM_NOTA_FISCAL (ID, NOTA_FISCAL_ID, PRODUTO_ID, QUANTIDADE, VALOR_UNITARIO) 
+    VALUES (15, 13, 15, 10, 5.00);
+
+    -- Inserir dados na tabela TB_TRIBUTOS
+    INSERT INTO TB_TRIBUTOS (ID, NOTA_FISCAL_ID, ICMS, IPI, PIS, COFINS) 
+    VALUES (11, 11, 144.00, 40.00, 13.20, 48.00);
+
+    INSERT INTO TB_TRIBUTOS (ID, NOTA_FISCAL_ID, ICMS, IPI, PIS, COFINS) 
+    VALUES (12, 12, 72.00, 20.00, 6.60, 24.00);
+
+    INSERT INTO TB_TRIBUTOS (ID, NOTA_FISCAL_ID, ICMS, IPI, PIS, COFINS) 
+    VALUES (13, 13, 180.00, 50.00, 16.50, 60.00);
+
+    INSERT INTO TB_TRIBUTOS (ID, NOTA_FISCAL_ID, ICMS, IPI, PIS, COFINS) 
+    VALUES (14, 14, 90.00, 25.00, 8.25, 30.00);
+
+    INSERT INTO TB_TRIBUTOS (ID, NOTA_FISCAL_ID, ICMS, IPI, PIS, COFINS) 
+    VALUES (15, 15, NULL, NULL, NULL, NULL);
+
+    -- Inserir dados na tabela TB_TRANSPORTADORA
+    INSERT INTO TB_TRANSPORTADORA (ID, NOME, CNPJ, ENDERECO, TELEFONE, EMAIL) 
+    VALUES (11, 'TransRápido Express', '11223344000166', 'Av. das Entregas, 1100', '1122445566', 'transrapido.express@email.com');
+
+    INSERT INTO TB_TRANSPORTADORA (ID, NOME, CNPJ, ENDERECO, TELEFONE, EMAIL) 
+    VALUES (12, 'Logística Ágil', '99887766000155', 'Rua dos Caminhões, 1200', '1199887766', 'logistica.agil@email.com');
+
+    INSERT INTO TB_TRANSPORTADORA (ID, NOME, CNPJ, ENDERECO, TELEFONE, EMAIL) 
+    VALUES (13, 'Carga Rápida', '55443322000144', 'Av. dos Carregamentos, 1300', '1144556677', 'carga.rapida@email.com');
+
+    INSERT INTO TB_TRANSPORTADORA (ID, NOME, CNPJ, ENDERECO, TELEFONE, EMAIL) 
+    VALUES (14, 'Veloz Transportes', '66778899000133', 'Rua das Estradas, 1400', '1155667788', 'veloz.transportes@email.com');
+
+    INSERT INTO TB_TRANSPORTADORA (ID, NOME, CNPJ, ENDERECO, TELEFONE, EMAIL) 
+    VALUES (15, 'Mundo Express', '22334455000122', 'Av. das Mercadorias, 1500', '1166778899', 'mundo.express@email.com');
+
+    -- Inserir dados na tabela TB_FRETE
+    INSERT INTO TB_FRETE (ID, NOTA_FISCAL_ID, TRANSPORTADORA_ID, VALOR_FRETE) 
+    VALUES (11, 11, 11, 15.00);
+
+    INSERT INTO TB_FRETE (ID, NOTA_FISCAL_ID, TRANSPORTADORA_ID, VALOR_FRETE) 
+    VALUES (12, 12, 12, 25.00);
+
+    INSERT INTO TB_FRETE (ID, NOTA_FISCAL_ID, TRANSPORTADORA_ID, VALOR_FRETE) 
+    VALUES (13, 13, 13, 35.00);
+
+    INSERT INTO TB_FRETE (ID, NOTA_FISCAL_ID, TRANSPORTADORA_ID, VALOR_FRETE) 
+    VALUES (14, 14, 14, 45.00);
+
+    INSERT INTO TB_FRETE (ID, NOTA_FISCAL_ID, TRANSPORTADORA_ID, VALOR_FRETE) 
+    VALUES (15, 15, 15, 55.00);
+
+    COMMIT; -- Confirma as inserções
+EXCEPTION
+    WHEN OTHERS THEN
+        ROLLBACK; -- Desfaz as inserções em caso de erro
+        RAISE; -- Relança a exceção para notificar o erro
+END;
